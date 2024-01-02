@@ -1,10 +1,10 @@
-package org.kharitonov.newskafkamicroservice;
+package org.kharitonov.kafka_consumer_wikimedia;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class NewsKafkaMicroserviceApplicationTests {
+class SpringBootConsumerApplicationTests {
 
 	@Test
 	void contextLoads() {

@@ -1,6 +1,6 @@
 package org.kharitonov.springboot;
 
-import org.kharitonov.springboot.producer.WikimediaNewsProducer;
+import org.kharitonov.springboot.service.WikimediaNewsProducer;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

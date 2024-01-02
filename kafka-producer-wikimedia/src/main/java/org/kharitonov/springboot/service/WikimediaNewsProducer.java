@@ -1,4 +1,4 @@
-package org.kharitonov.springboot.producer;
+package org.kharitonov.springboot.service;
 
 import com.launchdarkly.eventsource.EventHandler;
 import com.launchdarkly.eventsource.EventSource;
@@ -24,17 +24,12 @@ public class WikimediaNewsProducer {
         this.kafkaTemplate = kafkaTemplate;
     }
 
-    public void sendMessage(){
+    public void sendMessage() throws InterruptedException {
         EventHandler eventHandler = new WikimediaNewsHandler(topic, kafkaTemplate);
         String url = "https://stream.wikimedia.org/v2/stream/recentchange";
         EventSource.Builder source = new EventSource.Builder(eventHandler, URI.create(url));
         EventSource event = source.build();
         event.start();
-
-        try {
-            TimeUnit.MINUTES.sleep(10);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        TimeUnit.MINUTES.sleep(10);
     }
 }

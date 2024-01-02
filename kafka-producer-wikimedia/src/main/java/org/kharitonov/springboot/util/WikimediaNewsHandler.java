@@ -12,7 +12,6 @@ import org.springframework.stereotype.Service;
 public class WikimediaNewsHandler implements EventHandler {
 
 
-//    @Value("${spring.kafka.topic_name}")
     private String topic;
 
     private final KafkaTemplate<String, String> kafkaTemplate;
@@ -36,7 +35,7 @@ public class WikimediaNewsHandler implements EventHandler {
     public void onMessage(String s, MessageEvent messageEvent) throws Exception {
         String event = messageEvent.getData();
         log.info("Event data -> {}, ", event);
-        kafkaTemplate.send(topic,event);
+        kafkaTemplate.send(topic, event);
 
     }
 

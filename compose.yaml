@@ -31,7 +31,7 @@ services:
       POSTGRES_PASSWORD: postgres
       PGDATA: /var/lib/postgresql/data
     volumes:
-      - ./pg_data:/var/lib/postgresql/data
+      - ./pg_data2:/var/lib/postgresql/data
     ports:
       - "5433:5432"
     restart: unless-stopped

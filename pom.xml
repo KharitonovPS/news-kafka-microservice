@@ -14,8 +14,8 @@
 	<name>news-kafka-microservice</name>
 	<description>Demo project for Spring Boot with Apache Kafka</description>
 	<modules>
-		<module>kafka-producer-wikimedia</module>
-		<module>kafka-consumer-wikimedia</module>
+		<module>ms-news-publisher</module>
+		<module>ms-news-consumer</module>
 	</modules>
 	<packaging>pom</packaging>
 	<properties>

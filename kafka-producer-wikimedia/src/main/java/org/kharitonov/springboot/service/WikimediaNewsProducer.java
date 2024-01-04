@@ -2,6 +2,7 @@ package org.kharitonov.springboot.service;
 
 import com.launchdarkly.eventsource.EventHandler;
 import com.launchdarkly.eventsource.EventSource;
+import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
 import org.kharitonov.springboot.util.WikimediaNewsHandler;
 import org.springframework.beans.factory.annotation.Value;
@@ -14,6 +15,12 @@ import java.util.concurrent.TimeUnit;
 @Slf4j
 @Service
 public class WikimediaNewsProducer {
+
+    @PostConstruct
+    void init() throws InterruptedException {
+        WikimediaNewsProducer wikimediaNewsProducer = new WikimediaNewsProducer(kafkaTemplate);
+        wikimediaNewsProducer.sendMessage();
+    }
 
     @Value("${spring.kafka.topic_name}")
     private String topic;

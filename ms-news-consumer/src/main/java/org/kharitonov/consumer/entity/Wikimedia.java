@@ -14,6 +14,7 @@ public class Wikimedia {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "wikimedia_data")
+//    @Lob
+    @Column(name = "wikimedia_data", columnDefinition = "CLOB")
     private String wikimediaData;
 }

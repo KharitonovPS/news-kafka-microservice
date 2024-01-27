@@ -24,7 +24,7 @@ services:
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
   postgres:
     image: postgres:alpine
-    container_name: postgres-2
+    container_name: postgres-02
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
